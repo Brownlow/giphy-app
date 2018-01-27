@@ -5,7 +5,7 @@ topics = ['teacup pigs', 'fails', 'pain', 'puppies', 'hedgehogs', 'gnarwalls', '
 
 
 // Giphy API Key
-// displayMovieInfo function re-renders the HTML to display the appropriate content
+// display Topic Info function re-renders the HTML to display the appropriate content
 function displayGifs() {
 
 	var APIKey = "432HzlwijziY4lOejK6Ug8vkj557512E";
@@ -81,20 +81,20 @@ function renderButtons() {
 }
 
 
-// This function handles events where the add movie button is clicked
+// This function handles events where the add topic button is clicked
       $("#add-topic").on("click", function(event) {
         event.preventDefault();
         // This line of code will grab the input from the textbox
         var topic = $("#topic-input").val().trim();
 
-        // The movie from the textbox is then added to our array
+        // The topic from the textbox is then added to our array
         topics.push(topic);
 
-        // Calling renderButtons which handles the processing of our movie array
+        // Calling renderButtons which handles the processing of our topic array
         renderButtons();
       });
 
-      // Adding click event listeners to all elements with a class of "movie"
+      // Adding click event listeners to all elements with a class of "topic"
       $(document).on("click", ".topic", displayGifs);
 
       // Calling the renderButtons function to display the intial buttons

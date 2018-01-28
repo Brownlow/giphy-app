@@ -24,29 +24,32 @@ function displayGifs() {
 	        // Empty any gifs from gif-view
 	        $('#gif-view').empty();
 
+				
+
 	        for(var j=0; j<response.data.length; j++){
 
 
 	      		var gifHolder = $('<div class="gifHolder"></div>');
             	$('#gif-view').append(gifHolder);
+
             	gifHolder.append('<div><b>Gif Rating: </b>' + response.data[j].rating);
 
 	      		var topicImage = $('<img>');
-          		$('.gifHolder').append(topicImage);
+	      		
+          		gifHolder.append(topicImage);
           		topicImage.attr('src', response.data[j].images.downsized_still.url);
 
+
           		var gif = response.data[j].images.downsized.url;
+          		var img = response.data[j].images.downsized_still.url
           		
-          		$(document).on("click", '.gifHolder', function(){
+	        }   
+
+	        $(document).on("click", '.gifHolder', function(){
 	
           			console.log(gif);          			
 	        		topicImage.attr('src', gif);
 	        	});
-	        	
-
-	        } 
-	        
-	        
     	});
 	}
 

@@ -4,6 +4,8 @@
 topics = ['teacup pigs', 'fails', 'pain', 'puppies', 'hedgehogs', 'gnarwalls', 'angry corgis', 'dumb people', 'crashes', 'angry'];
 
 
+var topicImage;
+
 // Giphy API Key
 // display Topic Info function re-renders the HTML to display the appropriate content
 function displayGifs() {
@@ -34,26 +36,38 @@ function displayGifs() {
 
             	gifHolder.append('<div><b>Gif Rating: </b>' + response.data[j].rating);
 
-	      		var topicImage = $('<img>');
+	      		topicImage = $('<img>');
 	      		
           		gifHolder.append(topicImage);
+          		topicImage.addClass('clickable');
           		topicImage.attr('src', response.data[j].images.downsized_still.url);
-
-
-          		var gif = response.data[j].images.downsized.url;
-          		var img = response.data[j].images.downsized_still.url
-          		
+          		topicImage.attr('data-still', response.data[j].images.downsized_still.url);
+          		topicImage.attr('data-play', response.data[j].images.downsized.url);	
+          		topicImage.attr('data-state', 'still');	
 	        }   
-
-	        $(document).on("click", '.gifHolder', function(){
-	
-          			console.log(gif);          			
-	        		topicImage.attr('src', gif);
-	        	});
     	});
 	}
 
+	$(document).on("click", '.clickable', function(){
 
+
+		var still = $(this).attr('data-still');
+		var play = $(this).attr('data-play');
+		var state = $(this).attr('data-state');
+		// debugger;
+	
+		if(state === 'still'){
+		
+			$(this).attr('src', play);
+			$(this).attr('data-state', 'playing');
+			
+		} else{
+
+			$(this).attr('src', still);
+			$(this).attr('data-state', 'still');
+			
+		}
+	});
 
 function renderButtons() {
 

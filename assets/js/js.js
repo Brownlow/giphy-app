@@ -1,7 +1,7 @@
 // Giphy API Key  = 432HzlwijziY4lOejK6Ug8vkj557512E
 
 // Array of topics
-topics = ['teacup pigs', 'fails', 'pain', 'puppies', 'hedgehogs', 'gnarwalls', 'angry corgis', 'dumb people', 'crashes', 'angry'];
+topics = ['car crash', 'fails', 'pain', 'bikecrash', 'parkour fail', 'skateboard fail', 'bmx fail', 'dumb people', 'crashes', 'trouble'];
 
 
 var topicImage;

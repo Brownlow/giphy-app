@@ -1,7 +1,7 @@
 // Giphy API Key  = 432HzlwijziY4lOejK6Ug8vkj557512E
 
 // Array of topics
-topics = ['car crash', 'fails', 'pain', 'bikecrash', 'parkour fail', 'skateboard fail', 'bmx fail', 'dumb people', 'crashes', 'trouble'];
+topics = ['car crash', 'fails', 'pain', 'bike crash', 'parkour fail', 'skateboard fail', 'bmx fail', 'dumb people', 'crashes', 'trouble'];
 
 
 var topicImage;
@@ -40,9 +40,9 @@ function displayGifs() {
 	      		
           		gifHolder.append(topicImage);
           		topicImage.addClass('clickable');
-          		topicImage.attr('src', response.data[j].images.downsized_still.url);
-          		topicImage.attr('data-still', response.data[j].images.downsized_still.url);
-          		topicImage.attr('data-play', response.data[j].images.downsized.url);	
+          		topicImage.attr('src', response.data[j].images.fixed_height_still.url);
+          		topicImage.attr('data-still', response.data[j].images.fixed_height_still.url);
+          		topicImage.attr('data-play', response.data[j].images.fixed_height.url);	
           		topicImage.attr('data-state', 'still');	
 	        }   
     	});
